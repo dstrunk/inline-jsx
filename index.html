@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root">
+        <h1>Nothing burger</h1>
+        <MyComponent hello="world" something='{"hello":"world"}'>
+            this is data inside
+        </MyComponent>
+        <MyComponent></MyComponent>
+
+        <div class="something-else">
+            <MyComponent>
+                <h1 class="header">Header element</h1>
+                <span>This is HTML</span>
+            </MyComponent>
+            <AnotherOne />
+        </div>
+    </div>
+
+    <script src="/dist/app.js"></script>
+  </body>
+</html>
