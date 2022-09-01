@@ -1,4 +1,4 @@
-Inline JSX
+# Inline JSX
 
 This is a proof-of-concept to allow React JSX standalone components in existing legacy applications that might not allow for upgrading to a full-fledged React SPA.
 
