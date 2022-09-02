@@ -7,13 +7,13 @@ function MyComponent(props) {
 
     return (
         <>
-            <button onClick={() => incrementCount()}>
-                Increment Count
-            </button>
-
             {props.children && (
                 <div dangerouslySetInnerHTML={{__html: `${props.children}`}}></div>
             )}
+
+            <button onClick={() => incrementCount()}>
+                Increment Count
+            </button>
         </>
     )
 }
