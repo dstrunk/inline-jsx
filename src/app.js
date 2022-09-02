@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 
-const files = require.context('./', true, /\.jsx?$/i, 'sync')
+const files = require.context('./', true, /\.jsx$/i, 'sync')
 const components = {}
 files.keys().map((key) => {
   components[key.split('/').pop().split('.')[0]] = lazy(() => import(`${key}`))

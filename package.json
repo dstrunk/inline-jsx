@@ -4,7 +4,7 @@
   "description": "",
   "main": "webpack.mix.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "npx run watch"
   },
   "keywords": [],
   "author": "",
