@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import eventBus from "../eventBus";
 
-function AnotherOne() {
+function Counter() {
     const [count, setCount] = useState(0)
 
     useEffect(() => {
@@ -27,4 +27,4 @@ function AnotherOne() {
     )
 }
 
-export default AnotherOne;
+export default Counter;

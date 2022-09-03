@@ -1,6 +1,6 @@
 import eventBus from "../eventBus"
 
-function MyComponent(props) {
+function IncrementCount(props) {
     const incrementCount = () => {
         eventBus.publish('INCREMENT_COUNT', 1)
     }
@@ -18,4 +18,4 @@ function MyComponent(props) {
     )
 }
 
-export default MyComponent;
+export default IncrementCount;
