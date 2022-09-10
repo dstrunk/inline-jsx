@@ -38,6 +38,21 @@ const getPropsFromAttributes = (element) => {
   return props;
 }
 
+const walkReactDom = (el, callback, count = 0) => {
+    count ||= 0
+
+    callback(el, count)
+
+    el = el.firstElementChild
+    count++
+
+    while (el) {
+        walkReactDom(el, callback, count)
+
+        el = el.nextElementSibling
+    }
+}
+
 Object.entries(components).forEach(([key, value]) => {
   const elements = document.getElementsByTagName(key)
   if (!elements || elements.length === 0) {
