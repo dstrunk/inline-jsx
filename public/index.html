@@ -11,6 +11,25 @@
 
 <body>
     <h1>Inline JSX</h1>
+    <div class="text-center">
+        <p>Think of this file as a template in a traditianal framework monolith.
+        in Symfony, it's index.twig.php, in Laravel, it's index.blade.php, in
+        Magento, it's index.phtml … you get the picture. The only requirements
+        with this idea:
+        </p>
+        <ol>
+            <li>Any template that includes JSX root nodes <strong>must</strong>
+                include `app.js` at the bottom of the page.</li>
+            <li>JSX nodes can't (currently) be nested (this is subject to change with a more robust DOM crawler)</li>
+        </ol>
+        <p><strong>TL;DR</strong>: this works by looping through each of the available React
+        components created. For each of these components, a
+        `document.getElementsByTagName` is called to see if a tag in the DOM
+        matches the component. If the tag exists, a React root is created, the
+        tag/Component is injected into the root, and React renders the
+        results.</p>
+    </div>
+
     <div class="grid">
         <div>
             <IncrementCount>
