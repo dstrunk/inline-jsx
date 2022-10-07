@@ -10,43 +10,22 @@
 </head>
 
 <body>
-    <h1>Inline JSX</h1>
-    <div class="text-center">
-        <p>Think of this file as a template in a traditianal framework monolith.
-        in Symfony, it's index.twig.php, in Laravel, it's index.blade.php, in
-        Magento, it's index.phtml … you get the picture. The only requirements
-        with this idea:
-        </p>
-        <ol>
-            <li>Any template that includes JSX root nodes <strong>must</strong>
-                include `app.js` at the bottom of the page.</li>
-            <li>JSX nodes can't (currently) be nested (this is subject to change with a more robust DOM crawler)</li>
-        </ol>
-        <p><strong>TL;DR</strong>: this works by looping through each of the available React
-        components created. For each of these components, a
-        `document.getElementsByTagName` is called to see if a tag in the DOM
-        matches the component. If the tag exists, a React root is created, the
-        tag/Component is injected into the root, and React renders the
-        results.</p>
-    </div>
+    <section id="minicart-add-to-cart">
+        <header>
+            <h2>Mini Cart with Add to Cart functionality</h2>
+            <MiniCart />
+        </header>
 
-    <div class="grid">
-        <div>
-            <IncrementCount>
-                <h2>Increment Count Component</h2>
-                <span>Independent component number one</span>
-            </IncrementCount>
-        </div>
-        <div>
-            <IncrementCount>
-                <h2>Increment Count Component</h2>
-                <span>Independent component number two</span>
-            </IncrementCount>
-        </div>
-        <div class="counter">
-            <Counter />
-        </div>
-    </div>
+        <main>
+            <ul role="list">
+                <li>
+                    <div>
+                        <AddToCart product='{"id": 1, "title": "", "price": 10.99, "image": ""}' />
+                    </div>
+                </li>
+            </ul>
+        </main>
+    </section>
 
     <script src="/dist/js/app.js"></script>
 </body>
