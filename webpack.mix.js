@@ -1,7 +1,7 @@
 let mix = require('laravel-mix')
 
 mix.js('src/js/app.js', 'dist/js')
-  .less('src/less/app.less', 'dist/css')
+  .css('src/css/app.css', 'dist/css')
   .react()
   .setPublicPath('public')
   .webpackConfig({
