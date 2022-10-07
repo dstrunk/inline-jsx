@@ -7,6 +7,8 @@ files.keys().map((key) => {
     components[key.split('/').pop().split('.')[0]] = lazy(() => import(`${key}`))
 })
 
+const camelize = (s) => s.replace(/-./g, (x) => x[1].toUpperCase())
+
 const hasJsonStructure = (prop) => {
     if (typeof prop !== 'string') return false;
 
@@ -29,9 +31,9 @@ const getPropsFromAttributes = (element) => {
     for (let index = 0; index < element.attributes.length; index++) {
         let attribute = element.attributes[index]
         if (hasJsonStructure(attribute.value)) {
-            props[attribute.name] = JSON.parse(attribute.value)
+            props[camelize(attribute.name)] = JSON.parse(attribute.value)
         } else {
-            props[attribute.name] = attribute.value
+            props[camelize(attribute.name)] = attribute.value
         }
     }
 
