@@ -11,19 +11,89 @@
 
 <body>
     <section id="minicart-add-to-cart">
-        <header>
-            <h2>Mini Cart with Add to Cart functionality</h2>
-            <MiniCart />
+        <header class="relative">
+            <nav class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <h2 class="text-lg font-bold">Mini Cart with Add to Cart functionality</h2>
+
+                    <MiniCart />
+                </div>
+            </nav>
         </header>
 
-        <main>
-            <ul role="list">
-                <li>
-                    <div>
-                        <AddToCart product='{"id": 1, "title": "", "price": 10.99, "image": ""}' />
+        <main class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 mt-8 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 xl:gap-x-8">
+                <div>
+                    <div class="relative">
+                        <div class="relative w-full overflow-hidden rounded-lg h-72">
+                            <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg"
+                                alt="" class="object-cover object-center w-full h-full" />
+                        </div>
+                        <div class="relative mt-4">
+                            <h3 class="text-sm font-medium text-gray-900">Mini Hip Bag</h3>
+                        </div>
+                        <div
+                            class="absolute inset-x-0 top-0 flex items-end justify-end p-4 overflow-hidden rounded-lg h-72">
+                            <div aria-hidden="true"
+                                class="absolute inset-x-0 bottom-0 opacity-50 h-36 bg-gradient-to-t from-black"></div>
+                            <p class="relative text-lg font-semibold text-white">10.99</p>
+                        </div>
                     </div>
-                </li>
-            </ul>
+                    <div class="mt-6">
+                        <AddToCart
+                            product='{"id": 1, "title": "Mini Hip Bag", "price": 10.99, "image": "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg"}'
+                            class-list="relative flex items-center justify-center px-8 py-2 text-sm font-medium text-gray-900 bg-gray-100 border border-transparent rounded-md hover:bg-gray-200">
+                        </AddToCart>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="relative">
+                        <div class="relative w-full overflow-hidden rounded-lg h-72">
+                            <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg"
+                                alt="" class="object-cover object-center w-full h-full" />
+                        </div>
+                        <div class="relative mt-4">
+                            <h3 class="text-sm font-medium text-gray-900">Drawstring Bag</h3>
+                        </div>
+                        <div
+                            class="absolute inset-x-0 top-0 flex items-end justify-end p-4 overflow-hidden rounded-lg h-72">
+                            <div aria-hidden="true"
+                                class="absolute inset-x-0 bottom-0 opacity-50 h-36 bg-gradient-to-t from-black"></div>
+                            <p class="relative text-lg font-semibold text-white">12.99</p>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <AddToCart
+                            product='{"id": 2, "title": "Drawstring Bag", "price": 12.99, "image": "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg"}'
+                            class-list="relative flex items-center justify-center px-8 py-2 text-sm font-medium text-gray-900 bg-gray-100 border border-transparent rounded-md hover:bg-gray-200">
+                        </AddToCart>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="relative">
+                        <div class="relative w-full overflow-hidden rounded-lg h-72">
+                            <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-03.jpg"
+                                alt="" class="object-cover object-center w-full h-full" />
+                        </div>
+                        <div class="relative mt-4">
+                            <h3 class="text-sm font-medium text-gray-900">Shopping Bag</h3>
+                        </div>
+                        <div
+                            class="absolute inset-x-0 top-0 flex items-end justify-end p-4 overflow-hidden rounded-lg h-72">
+                            <div aria-hidden="true"
+                                class="absolute inset-x-0 bottom-0 opacity-50 h-36 bg-gradient-to-t from-black"></div>
+                            <p class="relative text-lg font-semibold text-white">17.99</p>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <AddToCart
+                            product='{"id": 3, "title": "Shopping Bag", "price": 17.99, "image": "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-03.jpg"}'
+                            class-list="relative flex items-center justify-center px-8 py-2 text-sm font-medium text-gray-900 bg-gray-100 border border-transparent rounded-md hover:bg-gray-200">
+                        </AddToCart>
+                    </div>
+                </div>
         </main>
     </section>
 

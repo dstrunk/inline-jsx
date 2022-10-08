@@ -1,6 +1,6 @@
 import eventBus from '../eventBus'
 
-function AddToCart({ product }) {
+function AddToCart({ product, classList }) {
     const addToCart = (product) => (e) => {
         e.preventDefault()
 
@@ -9,10 +9,10 @@ function AddToCart({ product }) {
 
     return (
         <button
-            className=""
+            className={`${classList}`}
             onClick={addToCart(product)}
         >
-            Add<span className="sr-only"> {product.title}</span> to Cart
+            Add to Cart<span className="sr-only">, {product.title}</span>
         </button>
     )
 }
