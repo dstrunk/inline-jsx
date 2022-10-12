@@ -25,20 +25,12 @@ const icon = (type) => {
 function Notification({ message, close }) {
     const [show, setShow] = useState(true)
 
-    const closeNotification = (message) => (e) => {
-        setShow(!show)
-
-        setTimeout(() => {
-            close(message)(e)
-        }, 300)
-    }
-
     return (
         <Transition
             appear={true}
             show={show}
+            afterLeave={close(message)}
             as={Fragment}
-            key={message.id}
         >
             <Transition.Child
                 as={'div'}
@@ -46,9 +38,9 @@ function Notification({ message, close }) {
                 enter="transform ease-out duration-300 transition"
                 enterFrom="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2"
                 enterTo="translate-y-0 opacity-100 sm:translate-x-0"
-                leave="transition ease-in duration-100"
-                leaveFrom="opacity-100"
-                leaveTo="opacity-0"
+                leave="transition ease-in duration-200"
+                leaveFrom="translate-y-0 sm:translate-x-0 opacity-100"
+                leaveTo="translate-y-2 sm:translate-y-0 sm:translate-x-2 opacity-0"
             >
                 <div className="p-4">
                     <div className="flex items-start">
@@ -63,7 +55,7 @@ function Notification({ message, close }) {
                             <button
                                 type="button"
                                 className="inline-flex text-gray-400 bg-white rounded-md hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                                onClick={closeNotification(message)}
+                                onClick={() => setShow(!show)}
                             >
                                 <span className="sr-only">Close</span>
                                 <XMarkIcon className="w-5 h-5" aria-hidden="true" />
