@@ -22,7 +22,7 @@ dependencies and serve the site.
 
 ```sh
 git clone git@github.com:dstrunk/inline-jsx.git && cd $1
-npm install && npm run serve
+yarn install && yarn serve
 ```
 
 After running the above commands, open up your browser to `localhost:3000` to

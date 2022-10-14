@@ -26,6 +26,6 @@ describe('MiniCart', () => {
     await userEvent.click(screen.getByTestId('minicart-button'))
 
     expect(screen.queryByTestId('minicart-no-items')).toBeNull()
-    expect(screen.queryByTestId('minicart-items')).toBeNull()
+    expect(screen.queryByTestId('minicart-items')).toBeTruthy()
   })
 })
