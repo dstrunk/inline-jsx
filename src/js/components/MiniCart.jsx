@@ -30,7 +30,7 @@ function MiniCart() {
 
     return (
         <Popover className="z-10 flow-root ml-4 text-sm lg:relative lg:ml-8">
-            <Popover.Button className="flex items-center p-2 -m-2 group">
+            <Popover.Button className="flex items-center p-2 -m-2 group" data-testid="minicart-button">
                 <ShoppingBagIcon
                     className="flex-shrink-0 w-6 h-6 text-gray-400 group-hover:text-gray-500"
                     aria-hidden="true"
@@ -51,7 +51,7 @@ function MiniCart() {
                     <h2 className="sr-only">Shopping Cart</h2>
 
                     {items.length === 0 && (
-                        <div className="max-w-2xl px-4 pt-6 mx-auto text-center">
+                        <div className="max-w-2xl px-4 pt-6 mx-auto text-center" data-testid="minicart-no-items">
                             <p className="text-gray-500">
                                 Your shopping cart is empty.
                             </p>
@@ -60,7 +60,7 @@ function MiniCart() {
 
                     {items.length > 0 && (
                         <form className="max-w-2xl px-4 mx-auto">
-                            <ul role="list" className="divide-y divide-gray-200">
+                            <ul role="list" className="divide-y divide-gray-200" data-testid="minicart-items">
                                 {items.map((item) => (
                                     <li key={item.id} className="flex items-center py-6">
                                         <img
