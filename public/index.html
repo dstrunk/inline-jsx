@@ -10,13 +10,28 @@
 </head>
 
 <body>
+
+    <section class="mt-12">
+        <header class="relative">
+            <nav class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <h2 class="text-lg font-bold">Configurable Product</h2>
+                </div>
+            </nav>
+        </header>
+
+        <div class="grid grid-cols-1 mt-8 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
+            <configurable-product></configurable-product>
+        </div>
+    </div>
+
     <section class="mt-12" id="minicart-add-to-cart">
         <header class="relative">
             <nav class="mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-16">
                     <h2 class="text-lg font-bold">Mini Cart with Add to Cart functionality</h2>
 
-                    <MiniCart />
+                    <mini-cart></mini-cart>
                 </div>
             </nav>
         </header>
@@ -40,10 +55,10 @@
                         </div>
                     </div>
                     <div class="mt-6">
-                        <AddToCartButton
+                        <add-to-cart-button
                             product='{"id": 1, "title": "Mini Hip Bag", "price": 10.99, "image": "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg"}'
                             class-list="relative flex items-center justify-center px-8 py-2 text-sm font-medium text-gray-900 bg-gray-100 border border-transparent rounded-md hover:bg-gray-200">
-                        </AddToCartButton>
+                        </add-to-cart-button>
                     </div>
                 </div>
 
@@ -64,10 +79,10 @@
                         </div>
                     </div>
                     <div class="mt-6">
-                        <AddToCartButton
+                        <add-to-cart-button
                             product='{"id": 2, "title": "Drawstring Bag", "price": 12.99, "image": "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg"}'
                             class-list="relative flex items-center justify-center px-8 py-2 text-sm font-medium text-gray-900 bg-gray-100 border border-transparent rounded-md hover:bg-gray-200">
-                        </AddToCartButton>
+                        </add-to-cart-button>
                     </div>
                 </div>
 
@@ -88,10 +103,10 @@
                         </div>
                     </div>
                     <div class="mt-6">
-                        <AddToCartButton
+                        <add-to-cart-button
                             product='{"id": 3, "title": "Shopping Bag", "price": 17.99, "image": "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-03.jpg"}'
                             class-list="relative flex items-center justify-center px-8 py-2 text-sm font-medium text-gray-900 bg-gray-100 border border-transparent rounded-md hover:bg-gray-200">
-                        </AddToCartButton>
+                        </add-to-cart-button>
                     </div>
                 </div>
 
@@ -112,10 +127,10 @@
                         </div>
                     </div>
                     <div class="mt-6">
-                        <AddToCartButton
+                        <add-to-cart-button
                             product='{"id": 4, "title": "Bag within a Bag", "price": 23.99, "image": "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-02-product-01.jpg"}'
                             class-list="relative flex items-center justify-center px-8 py-2 text-sm font-medium text-gray-900 bg-gray-100 border border-transparent rounded-md hover:bg-gray-200">
-                        </AddToCartButton>
+                        </add-to-cart-button>
                     </div>
                 </div>
             </div>
@@ -150,17 +165,16 @@
                         </div>
                     </div>
                     <div class="mt-6">
-                        <QuickViewButton
+                        <quick-view-button
                             product='{"id": 5, "title": "Green Bag", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eligendi cumque laborum! Blanditiis omnis voluptatibus cum explicabo nostrum praesentium, eos quas tempore pariatur, sapiente laudantium sunt optio nisi facilis provident?", "price": 11.99, "image": "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-02-product-03.jpg"}'
-                            class-list="relative flex items-center justify-center px-8 py-2 text-sm font-medium text-gray-900 bg-gray-100 border border-transparent rounded-md hover:bg-gray-200"
-                        />
+                            class-list="relative flex items-center justify-center px-8 py-2 text-sm font-medium text-gray-900 bg-gray-100 border border-transparent rounded-md hover:bg-gray-200" />
                     </div>
                 </div>
             </div>
         </main>
     </section>
 
-    <NotificationList />
+    <notification-list />
     <script src="/dist/js/app.js"></script>
 </body>
 

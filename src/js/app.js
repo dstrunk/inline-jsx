@@ -1,13 +1,17 @@
 import React, { lazy, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 
-const files = require.context('./', true, /\.jsx$/i, 'sync')
+const kebabize = (s) => s.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase()
+const camelize = (s) => s.replace(/-./g, (x) => x[1].toUpperCase())
+
+const files = require.context('./components/', true, /\.jsx$/i, 'sync')
 const components = {}
 files.keys().map((key) => {
-    components[key.split('/').pop().split('.')[0]] = lazy(() => import(`${key}`))
-})
+  const component = kebabize(key.split('/').pop().split('.')[0])
+  const path = `./components/${key.split('/').pop().split('.')[0]}`
 
-const camelize = (s) => s.replace(/-./g, (x) => x[1].toUpperCase())
+  components[component] = lazy(() => import(`${path}`))
+})
 
 const hasJsonStructure = (prop) => {
     if (typeof prop !== 'string') return false;
