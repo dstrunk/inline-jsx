@@ -110,19 +110,19 @@ function ConfigurableProduct() {
                                 {attribute.label}
                             </div>
 
-                            <div className={`options-container`}>
-                                <div className={`option-container`}>
+                            <div className={`ml-5 mr-1`}>
+                                <div className={`flex flex-wrap gap-10`}>
                                     {attribute.options?.length > 0 && attribute.options.map((option) => (
-                                        <label key={option.id}>
+                                        <label className={`relative`} key={option.id}>
                                             <input
                                                 type="radio"
-                                                className={`option`}
+                                                className={`bg-transparent m-0 before:border before:border-gray-700 before:content before:absolute before:top-0 before:right-0 before:bottom-0 before:left-0 -before:z-10 checked:before:bg-gray-900 checked:before:border-gray-900`}
                                                 name={`super_attribute[${attribute.id}]`}
                                                 disabled={!option.isValid}
                                                 value={option.id}
                                                 onClick={(e) => handleOptionClick(option, attribute.id)(e)}
                                             />
-                                            <span className={`option-text`}>
+                                            <span className={`text-gray-900`}>
                                                 {option.label}
                                             </span>
                                         </label>
