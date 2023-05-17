@@ -1,6 +1,6 @@
 import { Transition } from '@headlessui/react'
 import { CheckCircleIcon, ExclamationCircleIcon, ExclamationTriangleIcon, InformationCircleIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { Fragment, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 
 /**
  * Types: 'success', 'info', 'warning', 'error'
@@ -24,6 +24,12 @@ const icon = (type) => {
 
 function Notification({ message, close }) {
     const [show, setShow] = useState(true)
+
+    useEffect(() => {
+        let timer = setTimeout(() => setShow(false), 5000)
+
+        return () => clearTimeout(timer)
+    }, [])
 
     return (
         <Transition
